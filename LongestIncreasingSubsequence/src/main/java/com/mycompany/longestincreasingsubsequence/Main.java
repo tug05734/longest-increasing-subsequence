@@ -18,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        SequenceGenerator sg = new SequenceGenerator(10);
+        SequenceGenerator sg = new SequenceGenerator(49);
         sg.generateSequence();
         System.out.println(sg.getArrayList());
         SubsequenceFinder sf = new SubsequenceFinder(sg.getArrayList());

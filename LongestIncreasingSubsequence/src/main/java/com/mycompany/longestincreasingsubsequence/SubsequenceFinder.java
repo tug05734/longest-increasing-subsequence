@@ -19,9 +19,9 @@ public class SubsequenceFinder {
     }
     
     public ArrayList<Integer> findSubsequence(){
-        System.out.println(this.arrayList);
         for(int i = 0; i < arrayList.size()-1; i++){
             if( arrayList.get(i) < arrayList.get(i+1)){
+                int n = arrayList.get(i);
                 tempList.add(arrayList.get(i));
                 if(i == arrayList.size() - 2){
                     tempList.add(arrayList.get(i+1));
@@ -31,15 +31,15 @@ public class SubsequenceFinder {
                     }
                 }
             }else{
+                int x = arrayList.get(i);
                 tempList.add(arrayList.get(i));
                 if(i == arrayList.size() - 2 && arrayList.get(i) < arrayList.get(i+1)){
                     tempList.add(arrayList.get(i+1));
                 }
                 if(tempList.size()>subsequenceList.size()){
                     subsequenceList = (ArrayList)tempList.clone();
-                    tempList.clear();
                 }
-                
+                tempList.clear();
             }
         } 
         return subsequenceList;
