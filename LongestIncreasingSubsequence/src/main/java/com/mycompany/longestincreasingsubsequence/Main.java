@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package com.mycompany.longestincreasingsubsequence;
+
+import java.util.ArrayList;
+
 /**
  *
  * @author Rajat
@@ -17,7 +20,11 @@ public class Main {
         // TODO code application logic here
         SequenceGenerator sg = new SequenceGenerator(10);
         sg.generateSequence();
-        
+        System.out.println(sg.getArrayList());
+        SubsequenceFinder sf = new SubsequenceFinder(sg.getArrayList());
+        sf.clearLists();
+        sf.findSubsequence();
+        System.out.println(sf.getSubsequenceList()); 
     }
     
 }
