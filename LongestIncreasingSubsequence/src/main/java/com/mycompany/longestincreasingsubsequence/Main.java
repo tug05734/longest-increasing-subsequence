@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package com.mycompany.longestincreasingsubsequence;
-
 /**
  *
  * @author Rajat
@@ -16,6 +15,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        SequenceGenerator sg = new SequenceGenerator(10);
+        sg.generateSequence();
+        
     }
     
 }
