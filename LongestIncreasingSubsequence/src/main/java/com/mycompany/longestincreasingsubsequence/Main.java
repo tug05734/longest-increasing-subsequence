@@ -6,6 +6,7 @@
 package com.mycompany.longestincreasingsubsequence;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -18,13 +19,20 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        SequenceGenerator sg = new SequenceGenerator(49);
-        sg.generateSequence();
-        System.out.println(sg.getArrayList());
-        SubsequenceFinder sf = new SubsequenceFinder(sg.getArrayList());
-        sf.clearLists();
-        sf.findSubsequence();
-        System.out.println(sf.getSubsequenceList()); 
-    }
-    
+        int n;
+        System.out.println("Enter the desired n length of sequence (n < 100): ");
+        Scanner in = new Scanner(System.in);
+        if (in.hasNextInt()) {
+            n = in.nextInt();
+            SequenceGenerator sg = new SequenceGenerator(n);
+            sg.generateSequence();
+            System.out.println("\nSequence generated: " + sg.getArrayList());
+            SubsequenceFinder sf = new SubsequenceFinder(sg.getArrayList());
+            sf.clearLists();
+            sf.findSubsequence();
+            System.out.println("Largest increasing subsequence: " + sf.getSubsequenceList());
+        } else {
+            System.out.println("\nIncorrect entry. Program terminating.");
+        }
+    } 
 }

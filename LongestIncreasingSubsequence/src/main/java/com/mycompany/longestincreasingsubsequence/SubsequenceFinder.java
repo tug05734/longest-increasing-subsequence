@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * @author Rajat
  */
 public class SubsequenceFinder {
+    
     private ArrayList<Integer> arrayList = new ArrayList();
     private ArrayList<Integer> subsequenceList = new ArrayList();
     private ArrayList<Integer> tempList = new ArrayList();
@@ -19,21 +20,19 @@ public class SubsequenceFinder {
     }
     
     public ArrayList<Integer> findSubsequence(){
-        for(int i = 0; i < arrayList.size()-1; i++){
-            if( arrayList.get(i) < arrayList.get(i+1)){
-                int n = arrayList.get(i);
+        for(int i = 0; i < arrayList.size()-1; i++){        //Iterates through arraylist
+            if( arrayList.get(i) < arrayList.get(i+1)){     //If current index is smaller than the next index add to temp
                 tempList.add(arrayList.get(i));
-                if(i == arrayList.size() - 2){
+                if(i == arrayList.size() - 2){              //If reached the second to last index of arraylist, adds last index to arraylist
                     tempList.add(arrayList.get(i+1));
-                    if(tempList.size()>subsequenceList.size()){
+                    if(tempList.size()>subsequenceList.size()){     //If temp is larger, subsequencelist clones temp 
                         subsequenceList = (ArrayList)tempList.clone();
                         tempList.clear();
                     }
                 }
-            }else{
-                int x = arrayList.get(i);
-                tempList.add(arrayList.get(i));
-                if(i == arrayList.size() - 2 && arrayList.get(i) < arrayList.get(i+1)){
+            }else{                  
+                tempList.add(arrayList.get(i)); //Adds current index to temp
+                if(i == arrayList.size() - 2 && arrayList.get(i) < arrayList.get(i+1)){     //If reached the second to last index and the last index is larger add to temp
                     tempList.add(arrayList.get(i+1));
                 }
                 if(tempList.size()>subsequenceList.size()){
@@ -49,7 +48,6 @@ public class SubsequenceFinder {
     } 
     
     public void clearLists(){
-        //arrayList.clear();
         subsequenceList.clear();
         tempList.clear(); 
     } 
